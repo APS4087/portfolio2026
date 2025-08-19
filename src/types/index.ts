@@ -11,7 +11,7 @@ export interface Project {
 export interface Skill {
   name: string;
   id: string;
-  category?: 'design' | 'development' | 'ai' | 'other';
+  category?: 'design' | 'development' | 'ai' | 'infrastructure' | 'automation' | 'other';
 }
 
 export interface SocialLink {

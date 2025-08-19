@@ -22,16 +22,15 @@ const DesktopLayout: React.FC<DesktopLayoutProps> = ({
   onSocialClick 
 }) => {
   return (
-    <div className="hidden sm:grid grid-cols-12 gap-2 lg:gap-3 xl:gap-4 2xl:gap-6 h-full grid-rows-[auto_1fr_auto_auto] auto-rows-max">
-      
-      {/* Header - Full Width */}
+    <div className="grid grid-cols-12 gap-2 sm:gap-3 lg:gap-4 xl:gap-5 2xl:gap-6 h-full overflow-hidden grid-rows-[minmax(50px,8vh)_minmax(160px,50vh)_minmax(50px,21vh)_minmax(50px,21vh)]">
+      {/* Row 1: Header - Full Width */}
       <Header />
-
-      {/* Row 2: Hero, Portrait, Work (spans 2 rows) */}
+      
+      {/* Row 2: Hero, Portrait, Work (Work spans 2 rows) */}
       <HeroSection title={PERSONAL_INFO.title} />
       <PortraitSection imageSrc={PERSONAL_INFO.image} altText={`${PERSONAL_INFO.name} portrait`} />
       <WorkSection projects={PROJECTS} />
-
+      
       {/* Row 3: Skills, Availability */}
       <SkillsSection skills={SKILLS} />
       <AvailabilitySection 
@@ -39,12 +38,11 @@ const DesktopLayout: React.FC<DesktopLayoutProps> = ({
         statusText={CONTACT_INFO.statusText}
         location={CONTACT_INFO.location}
       />
-
+      
       {/* Row 4: About, Contact, Socials */}
-      <AboutSection description={PERSONAL_INFO.description} />
+      <AboutSection />
       <ContactSection onContactClick={onContactClick} />
       <SocialsSection socialLinks={SOCIAL_LINKS} onSocialClick={onSocialClick} />
-
     </div>
   );
 };

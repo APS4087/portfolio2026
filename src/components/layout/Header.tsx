@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import { NAVIGATION_ITEMS, PERSONAL_INFO } from '@/constants/data';
+import { PERSONAL_INFO, NAVIGATION_ITEMS } from '@/constants/data';
+import { useTheme } from '@/contexts/ThemeContext';
 
 interface HeaderProps {
   className?: string;
@@ -12,17 +13,20 @@ const Header: React.FC<HeaderProps> = ({
   className = "",
   name = PERSONAL_INFO.name
 }) => {
+  const { isDarkMode } = useTheme();
+
   return (
-    <header className={`col-span-12 bg-white border border-[#E5E5E7] rounded-[12px] lg:rounded-[16px] xl:rounded-[20px] 2xl:rounded-[28px] p-3 lg:p-4 xl:p-5 2xl:p-8 flex justify-between items-center min-h-0 ${className}`}>
-      <div className="text-[#1D1D1F] font-light text-[16px] lg:text-[20px] xl:text-[24px] 2xl:text-[32px] uppercase tracking-wide break-words min-w-0 flex-shrink-0">
-        {name.toUpperCase()}
+    <header className={`col-span-12 border rounded-[12px] lg:rounded-[16px] xl:rounded-[20px] 2xl:rounded-[28px] p-3 lg:p-4 xl:p-5 2xl:p-8 flex justify-between items-center min-h-0 transition-colors duration-300 ${isDarkMode ? 'bg-[#1a1a1a] border-[#2a2a2a]' : 'bg-white border-[#E5E5E7]'} ${className}`}>
+      <div className="nothing-hero text-[#1D1D1F] text-[16px] lg:text-[20px] xl:text-[24px] 2xl:text-[32px] break-words min-w-0 flex-shrink-0 flex items-baseline">
+        <span className="text-dot-matrix-static">{name.split(' ')[0].toUpperCase()}</span>
+        <span className={`nothing-hero ml-1 ${isDarkMode ? 'text-[#ffffff]' : 'text-[#1D1D1F]'}`}>{name.split(' ').slice(1).join(' ').toUpperCase()}</span>
       </div>
       <nav className="flex gap-4 lg:gap-8 xl:gap-10 2xl:gap-16 flex-shrink-0">
         {NAVIGATION_ITEMS.map((item) => (
           <a
             key={item.name}
             href={item.href}
-            className="text-[#6E6E73] font-light text-[10px] lg:text-[12px] xl:text-[14px] 2xl:text-[18px] uppercase hover:text-[#007AFF] transition-colors whitespace-nowrap"
+            className={`nothing-subtitle text-[10px] lg:text-[12px] xl:text-[14px] 2xl:text-[18px] hover:text-[#007AFF] transition-colors whitespace-nowrap ${isDarkMode ? 'text-[#999999]' : 'text-[#6E6E73]'}`}
           >
             {item.name}
           </a>

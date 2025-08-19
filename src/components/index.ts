@@ -12,3 +12,4 @@ export { default as AvailabilitySection } from './bento/AvailabilitySection';
 export { default as AboutSection } from './bento/AboutSection';
 export { default as ContactSection } from './bento/ContactSection';
 export { default as SocialsSection } from './bento/SocialsSection';
+export { default as ExperienceSection } from './bento/ExperienceSection';
