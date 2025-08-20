@@ -6,7 +6,7 @@ import HeroSection from '../bento/HeroSection';
 import PortraitSection from '../bento/PortraitSection';
 import WorkSection from '../bento/WorkSection';
 import SkillsSection from '../bento/SkillsSection';
-import AvailabilitySection from '../bento/AvailabilitySection';
+import WeatherLocationSection from '../bento/WeatherLocationSection';
 import AboutSection from '../bento/AboutSection';
 import ContactSection from '../bento/ContactSection';
 import SocialsSection from '../bento/SocialsSection';
@@ -31,11 +31,9 @@ const DesktopLayout: React.FC<DesktopLayoutProps> = ({
       <PortraitSection imageSrc={PERSONAL_INFO.image} altText={`${PERSONAL_INFO.name} portrait`} />
       <WorkSection projects={PROJECTS} />
       
-      {/* Row 3: Skills, Availability */}
+      {/* Row 3: Skills, Weather Location */}
       <SkillsSection skills={SKILLS} />
-      <AvailabilitySection 
-        status={CONTACT_INFO.availability}
-        statusText={CONTACT_INFO.statusText}
+      <WeatherLocationSection 
         location={CONTACT_INFO.location}
       />
       

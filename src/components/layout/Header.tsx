@@ -1,8 +1,10 @@
 'use client';
 
 import React from 'react';
+import { Search, Command } from 'lucide-react';
 import { PERSONAL_INFO, NAVIGATION_ITEMS } from '@/constants/data';
 import { useTheme } from '@/contexts/ThemeContext';
+import { useSpotlight } from '@/hooks/use-spotlight';
 
 interface HeaderProps {
   className?: string;
@@ -14,6 +16,7 @@ const Header: React.FC<HeaderProps> = ({
   name = PERSONAL_INFO.name
 }) => {
   const { isDarkMode } = useTheme();
+  const { open } = useSpotlight();
 
   return (
     <header className={`col-span-12 border rounded-[12px] lg:rounded-[16px] xl:rounded-[20px] 2xl:rounded-[28px] p-3 lg:p-4 xl:p-5 2xl:p-8 flex justify-between items-center min-h-0 transition-colors duration-300 ${isDarkMode ? 'bg-[#1a1a1a] border-[#2a2a2a]' : 'bg-white border-[#E5E5E7]'} ${className}`}>
@@ -32,6 +35,16 @@ const Header: React.FC<HeaderProps> = ({
           </a>
         ))}
       </nav>
+      <button 
+        onClick={open}
+        className={`hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-colors ${isDarkMode ? 'text-gray-400 hover:bg-gray-800' : 'text-gray-500 hover:bg-gray-100'}`}
+        aria-label="Search (Ctrl+K)"
+      >
+        <Search className="h-4 w-4" />
+        <span className="text-xs font-mono hidden xl:inline">
+          {navigator.platform.includes('Mac') ? '⌘K' : 'Ctrl K'}
+        </span>
+      </button>
     </header>
   );
 };

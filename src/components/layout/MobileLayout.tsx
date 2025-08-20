@@ -146,11 +146,26 @@ const MobileLayout: React.FC = () => {
               </div>
             </div>
 
+            {/* Weather Location Section */}
+            <div className="w-[160px] h-[200px] bg-white border border-[#E5E5E7] rounded-[8px] p-3 flex flex-col justify-center items-center text-center overflow-hidden flex-shrink-0 relative">
+              {/* Weather content will be handled by the component */}
+              <div className="flex items-center justify-center mb-2">
+                <span className="text-[20px] mr-1">🌧️</span>
+                <span className="nothing-mono text-[#1D1D1F] text-[14px] font-medium">28°C</span>
+              </div>
+              <p className="nothing-mono text-[#6E6E73] text-[8px] mb-1">Light Rain</p>
+              <p className="nothing-mono text-[#1D1D1F] text-[10px] font-medium mb-1">📍 Singapore</p>
+              <div className="flex items-center justify-center space-x-2 text-[7px]">
+                <span className="nothing-mono text-[#6E6E73]">💧 85%</span>
+                <span className="nothing-mono text-[#6E6E73]">💨 12km/h</span>
+              </div>
+            </div>
+
             {/* Socials Section */}
             <div className="w-[160px] h-[200px] bg-white border border-[#E5E5E7] rounded-[8px] p-3 flex flex-col justify-center gap-4 overflow-hidden flex-shrink-0">
-              <span className="nothing-subtitle text-[#6E6E73] text-[9px]">INSTAGRAM</span>
-              <span className="nothing-subtitle text-[#6E6E73] text-[9px]">TWITTER</span>
               <span className="nothing-subtitle text-[#6E6E73] text-[9px]">LINKEDIN</span>
+              <span className="nothing-subtitle text-[#6E6E73] text-[9px]">GITHUB</span>
+              <span className="nothing-subtitle text-[#6E6E73] text-[9px]">WEBSITE</span>
             </div>
           </div>
         </div>

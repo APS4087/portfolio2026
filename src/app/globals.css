@@ -212,6 +212,56 @@ html {
   color: var(--gray-4);
 }
 
+/* Spotlight Input Styles */
+.spotlight-input {
+  width: 100%;
+  background: transparent;
+  padding: 1rem 1rem 1rem 2.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  outline: none;
+  color: rgba(17, 24, 39, 0.95);
+}
+
+.dark .spotlight-input {
+  color: rgba(243, 244, 246, 0.95) !important;
+}
+
+.spotlight-input::placeholder {
+  color: #6b7280;
+}
+
+.dark .spotlight-input::placeholder {
+  color: #9ca3af;
+}
+
+/* Spotlight Input */
+.spotlight-input {
+  width: 100%;
+  background: transparent;
+  padding: 1rem 1rem 1rem 2.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  outline: none;
+  color: #111827 !important;
+  -webkit-text-fill-color: #111827 !important;
+}
+
+.dark .spotlight-input {
+  color: #f3f4f6 !important;
+  -webkit-text-fill-color: #f3f4f6 !important;
+}
+
+.spotlight-input::placeholder {
+  color: #6b7280;
+}
+
+.dark .spotlight-input::placeholder {
+  color: #9ca3af;
+}
+
 /* Nothing Button Text Styles */
 .text-button-large {
   font-family: var(--font-text);
